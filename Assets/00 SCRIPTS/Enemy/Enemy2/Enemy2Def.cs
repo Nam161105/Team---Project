@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class Enemy2Def : MonoBehaviour
 {
     [SerializeField] protected float maxHp = 100;
@@ -10,6 +11,7 @@ public class Enemy2Def : MonoBehaviour
     [SerializeField] protected Image _image;
     protected AudioManager audioManager;
     protected HealthBarOfPlayer _health;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag(CONSTANT._audio).GetComponent<AudioManager>();
@@ -24,6 +26,8 @@ public class Enemy2Def : MonoBehaviour
     public void TakeDame(float dame)
     {
         currentHp -= dame;
+
+
         animator.SetTrigger(CONSTANT._hurt);
         if(currentHp <= 0)
         {
@@ -36,7 +40,7 @@ public class Enemy2Def : MonoBehaviour
 
     protected void Die()
     {
-        _health.AddDame(10);
+        _health.AddDame(20);
         this.gameObject.SetActive(false);
     }
     protected void UpdateHealthBar()

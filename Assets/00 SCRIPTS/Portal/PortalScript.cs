@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PortalScript : MonoBehaviour
 {
-    [SerializeField] protected GameObject _portalOut;
     [SerializeField] protected GameObject _player;
 
     private void Awake()
@@ -15,7 +14,7 @@ public class PortalScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(CONSTANT._player))
         {
-            if(Vector2.Distance(_player.transform.position, transform.position) > 0.3f)
+            if(Vector2.Distance(_player.transform.position, transform.position) > 0.5f)
             {
                 StartCoroutine(PortalIn());
             }
@@ -25,7 +24,8 @@ public class PortalScript : MonoBehaviour
     protected IEnumerator PortalIn()
     {
         yield return new WaitForSeconds(0.5f);
-        _player.transform.position = _portalOut.transform.position;
+        GameObject randomPortal = PortalManager.Instance.GetPortal();
+        _player.transform.position = randomPortal.transform.position;
 
     }
 }

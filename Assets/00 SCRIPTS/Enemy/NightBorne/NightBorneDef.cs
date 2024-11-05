@@ -22,9 +22,11 @@ public class NightBorneDef : MonoBehaviour
     public void TakeDame(float dame)
     {
         currentHp -= dame;
-        if(currentHp <= 0)
+        
+
+        if (currentHp <= 0)
         {
-            _health.AddDame(10);
+            _health.AddDame(20);
             animator.SetTrigger(CONSTANT._die);
             this.gameObject.SetActive(false);
 

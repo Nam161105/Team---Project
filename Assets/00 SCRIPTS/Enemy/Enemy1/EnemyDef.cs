@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class EnemyDef : MonoBehaviour
 {
     [SerializeField] protected float maxHp = 100;
@@ -39,8 +40,10 @@ public class EnemyDef : MonoBehaviour
     }
     public void TakeDame(float dame)
     {
+
         currentHp -= dame;
 
+        
         _ani.SetTrigger(CONSTANT._hurt);
 
         if(currentHp <= 0)
@@ -54,7 +57,7 @@ public class EnemyDef : MonoBehaviour
 
     protected void Die()
     {
-        _healthBarOfPlayer.AddDame(10);
+        _healthBarOfPlayer.AddDame(20);
         Instantiate(_prefabExplosion, this.transform.position, Quaternion.identity);
         gameObject.SetActive(false);
 

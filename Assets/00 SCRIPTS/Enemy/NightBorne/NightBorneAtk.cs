@@ -11,6 +11,7 @@ public class NightBorneAtk : MonoBehaviour
     [SerializeField] protected float atkRange;
     [SerializeField] protected LayerMask player;
     [SerializeField] protected bool _isAtk = false;
+    [SerializeField] protected float damage;
 
     private void Awake()
     {
@@ -41,13 +42,11 @@ public class NightBorneAtk : MonoBehaviour
                 _animator.SetTrigger(CONSTANT._run);
                 this.transform.position = Vector3.MoveTowards(this.transform.position, _player.transform.position, _speed * Time.deltaTime);
             }
-            else 
+            else if (!_isAtk)
             {
-                if (!_isAtk)
-                {
-                    StartCoroutine(CheckAtk());
-                }
+                StartCoroutine(CheckAtk());
             }
+
         }
         else
         {
@@ -59,7 +58,7 @@ public class NightBorneAtk : MonoBehaviour
         _isAtk = true;
         _animator.SetTrigger(CONSTANT._atk);
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length * 0.5f);
-        this.TakeDameWithPlayer();
+        Invoke(CONSTANT._takeDameScrip, 1f);
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length * 0.5f);
         _isAtk = false;
     }
@@ -74,7 +73,7 @@ public class NightBorneAtk : MonoBehaviour
                 HealthBarOfPlayer health = hit.GetComponent<HealthBarOfPlayer>();
                 if(health != null)
                 {
-                    health.TakeDamage(10);
+                    health.TakeDamage(damage);
                 }
             }
         }

@@ -68940,6 +68940,7 @@ GameObject:
   - component: {fileID: 517146502}
   - component: {fileID: 517146501}
   - component: {fileID: 517146504}
+  - component: {fileID: 517146505}
   m_Layer: 0
   m_Name: icons32x32_1
   m_TagString: Untagged
@@ -68979,7 +68980,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7463691}
+  m_Offset: {x: 0.01399231, y: 1.2819949}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -68990,7 +68991,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.9840188}
+  m_Size: {x: 0.48686218, y: 3.6751497}
   m_EdgeRadius: 0
 --- !u!212 &517146502
 SpriteRenderer:
@@ -69053,7 +69054,7 @@ Transform:
   m_GameObject: {fileID: 517146500}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.111427, y: -3.097147, z: 0.28742424}
+  m_LocalPosition: {x: 47.11143, y: -3.097147, z: 0.2874242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69072,6 +69073,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boardNoti: {fileID: 129189858}
+--- !u!95 &517146505
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517146500}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0e13222c0d43704aa9db71cc235f26e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -70020,7 +70042,7 @@ GameObject:
   - component: {fileID: 633548339}
   - component: {fileID: 633548342}
   - component: {fileID: 633548341}
-  - component: {fileID: 633548340}
+  - component: {fileID: 633548343}
   m_Layer: 0
   m_Name: PF Village Props - Crate Large
   m_TagString: Untagged
@@ -70043,33 +70065,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 289131588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &633548340
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633548338}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 30
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &633548341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70167,6 +70162,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &633548343
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633548338}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &636769714
 GameObject:
   m_ObjectHideFlags: 0
@@ -86499,6 +86521,7 @@ GameObject:
   - component: {fileID: 1275415045}
   - component: {fileID: 1275415047}
   - component: {fileID: 1275415048}
+  - component: {fileID: 1275415049}
   m_Layer: 0
   m_Name: icons32x32_0
   m_TagString: Untagged
@@ -86567,7 +86590,7 @@ Transform:
   m_GameObject: {fileID: 1275415044}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -78.600075, y: -6.687147, z: 0.28742424}
+  m_LocalPosition: {x: -78.60007, y: -7.15, z: 0.2874242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86605,7 +86628,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.62922937}
+  m_Offset: {x: 0.0037503242, y: 1.4730328}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -86616,7 +86639,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.3209577}
+  m_Size: {x: 0.45247316, y: 3.7565463}
   m_EdgeRadius: 0
 --- !u!114 &1275415048
 MonoBehaviour:
@@ -86631,6 +86654,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boardNoti: {fileID: 777741413}
+--- !u!95 &1275415049
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275415044}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd1f5092e1d0b18458c0767c0644a552, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1286634743
 GameObject:
   m_ObjectHideFlags: 0
@@ -96963,7 +97007,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300120, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108529,6 +108573,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 112444613}
+    - target: {fileID: 1552083884001972196, guid: 97572f524dc42d1429f41ef0177c54e9, type: 3}
+      propertyPath: lifeTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3324696649646256645, guid: 97572f524dc42d1429f41ef0177c54e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 122.608345

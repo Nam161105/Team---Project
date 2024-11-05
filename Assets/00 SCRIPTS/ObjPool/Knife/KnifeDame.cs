@@ -6,6 +6,7 @@ public class KnifeDame : MonoBehaviour
 {
 
     [SerializeField] protected float dame;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(CONSTANT._enemy))

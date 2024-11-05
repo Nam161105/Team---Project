@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BulletDame : MonoBehaviour
 {
     [SerializeField] protected int damage;
-    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,6 +29,7 @@ public class BulletDame : MonoBehaviour
                 _explosion.transform.position = this.transform.position;
                 _explosion.transform.rotation = Quaternion.identity;
                 _explosion.SetActive(true);
+
             }
 
             NightBorneDef nightDef = collision.GetComponent<NightBorneDef>();

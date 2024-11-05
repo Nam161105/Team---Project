@@ -22,7 +22,8 @@ public class CONSTANT
     public static string _hurt = "hurt";
     public static string _die = "die";
     public static string _fyling = "flying";
-    public static string _insantaceKnife = "InstanceKnife";
+    public static string _insantaceKnifeScrip = "InstanceKnife";
     public static string _loadScene = "LoadScene";
     public static string _dieScrip = "Die";
+    public static string _takeDameScrip = "TakeDameWithPlayer";
 }
