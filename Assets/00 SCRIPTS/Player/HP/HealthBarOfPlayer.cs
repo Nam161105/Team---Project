@@ -10,11 +10,10 @@ public class HealthBarOfPlayer : MonoBehaviour
 
     [SerializeField] protected string _name;
     protected Animator _animator;
-    protected AudioManager _audioManager;
+
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _audioManager = GameObject.FindGameObjectWithTag(CONSTANT._audio).GetComponent<AudioManager>();
         UpdateHealth();
     }
 
@@ -25,7 +24,7 @@ public class HealthBarOfPlayer : MonoBehaviour
         _animator.SetTrigger(CONSTANT._hurt);
         if(_healthSc.currentHp <= 0)
         {
-            _audioManager.PlaySFX(_audioManager.dieClip);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.dieClip);
             Invoke(CONSTANT._loadScene, 1f);
             
         } 

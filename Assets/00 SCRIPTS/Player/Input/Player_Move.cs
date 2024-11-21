@@ -9,12 +9,7 @@ public class Player_Move : MonoBehaviour
     [SerializeField] protected Vector2 _force;
     [SerializeField] public bool _onGround = false;
     [SerializeField] protected Animator _ani;
-    protected AudioManager _audioManager;
 
-    private void Awake()
-    {
-        _audioManager = GameObject.FindGameObjectWithTag(CONSTANT._audio).GetComponent<AudioManager>();
-    }
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -44,7 +39,7 @@ public class Player_Move : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && _onGround)
         {
-            _audioManager.PlaySFX(_audioManager.jumpClip);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.jumpClip);
             _rb.AddForce(_force, ForceMode2D.Impulse);
             _onGround = false;
         }

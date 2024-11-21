@@ -7,7 +7,6 @@ public class CONSTANT
     public static string _player = "Player";
     public static string _enemy = "Enemy";
     public static string _capsule = "Capsule";
-    public static string _audio = "Audio";
     public static string _mapDemo = "Map_Demo";
     public static string _mainMenu = "Main_Menu";
     public static string _start = "start";

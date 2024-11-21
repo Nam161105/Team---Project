@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    protected static AudioManager instance;
+    public static AudioManager Instance {  get { return instance; } }
+
     public AudioSource audioSource;
     public AudioSource vfxSource;
 
@@ -16,8 +19,17 @@ public class AudioManager : MonoBehaviour
     public AudioClip knife2Clip;
     public AudioClip monsterDieClip;
 
-    private void Start()
+    private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         audioSource.clip = musicClip;
         audioSource.Play();
     }

@@ -14,14 +14,12 @@ public class Player_Atk : MonoBehaviour
     [SerializeField] protected float atkTime3;
     [SerializeField] protected float damage;
     [SerializeField] protected GameObject _bullet;
-    protected AudioManager _audioManager;
     protected float nextTimeAtk1 = 0f;
     protected float nextTimeAtk2 = 0f;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _audioManager = GameObject.FindGameObjectWithTag(CONSTANT._audio).GetComponent<AudioManager>();
     }
 
     void Update()
@@ -43,7 +41,7 @@ public class Player_Atk : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.L))
             {
                 _animator.SetTrigger(CONSTANT._atk2);
-                _audioManager.PlaySFX(_audioManager.knifeClip);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.knifeClip);
                 nextTimeAtk1 = Time.time + atkTime2;
                 Invoke("InstanceBullet", 0.3f);
             }
@@ -58,7 +56,7 @@ public class Player_Atk : MonoBehaviour
             {
                 _animator.SetTrigger(CONSTANT._atk);
                 nextTimeAtk1 = Time.time + atkTime;
-                _audioManager.PlaySFX(_audioManager.slashClip);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.slashClip);
 
 
                 Invoke("AtkAfterTime", 0.5f);
@@ -74,7 +72,7 @@ public class Player_Atk : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.K))
             {
                 _animator.SetTrigger(CONSTANT._atk3);
-                _audioManager.PlaySFX(_audioManager.knife2Clip);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.knife2Clip);
                 nextTimeAtk2 = Time.time + atkTime3;
                 Invoke(CONSTANT._insantaceKnifeScrip, 0.4f);
             }

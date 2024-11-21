@@ -9,12 +9,10 @@ public class Enemy2Def : MonoBehaviour
     protected float currentHp;
     [SerializeField] protected Animator animator;
     [SerializeField] protected Image _image;
-    protected AudioManager audioManager;
     protected HealthBarOfPlayer _health;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag(CONSTANT._audio).GetComponent<AudioManager>();
         _health = GameObject.FindGameObjectWithTag(CONSTANT._player).GetComponent<HealthBarOfPlayer>();
     }
     private void Start()
@@ -31,7 +29,7 @@ public class Enemy2Def : MonoBehaviour
         animator.SetTrigger(CONSTANT._hurt);
         if(currentHp <= 0)
         {
-            audioManager.PlaySFX(audioManager.monsterDieClip);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.monsterDieClip);
             animator.SetTrigger(CONSTANT._die);
             Invoke(CONSTANT._dieScrip, 0.5f);
         } 

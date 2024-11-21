@@ -12,7 +12,6 @@ public class EnemyDef : MonoBehaviour
     [SerializeField] private Transform _healthTransform;
     private Camera _camera;
     [SerializeField] protected GameObject _prefabExplosion;
-    protected AudioManager _audioManager;
     protected HealthBarOfPlayer _healthBarOfPlayer;
 
     private void Awake()
@@ -26,7 +25,6 @@ public class EnemyDef : MonoBehaviour
     {
         currentHp = maxHp;
         _camera = Camera.main;
-        _audioManager = GameObject.FindGameObjectWithTag(CONSTANT._audio).GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -48,7 +46,7 @@ public class EnemyDef : MonoBehaviour
 
         if(currentHp <= 0)
         {
-            _audioManager.PlaySFX(_audioManager.enemyDieClip);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyDieClip);
             Die();
             
         }
